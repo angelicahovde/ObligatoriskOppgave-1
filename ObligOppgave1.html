@@ -9,33 +9,40 @@
 
     <script>
 
-        // Sjekker riktig dato - Hovedfunksjon?
+
+        // Hovedfunksjon 
         function isDateValid(dato) {
-            return()
+            return (dott(dato) &&   // ??
+            lengde (dato) &&
+            tredjeOgSjette (dato) &&
+            år (dato) &&
+            måned (dato) &&
+            dag (dato));
         }
+
         // Sjekker lengde på vist tekst som skal være 10 tegn. Eks 00.00.0000
         function lengde(dato) {
-            let lenght = dato
             return (dato.lenght === 10)
         }
         // Sjekker om det er punktum på 3. og 6. tegnet
-        function tredjeOgSjette(dato){
-            return()
+        function tredjeOgSjette(dato) {
+            return (dato.charAt(2) === "." && dato.charAt(5) === '.'); // Denne må testes
+            
         }
         // Sjekker om år er 0000 eller større 
         function år(dato) {
-            let year = dato
-            return (year.length === 4 && year >= '0000' && year <= '9999')
+            let year = dato.substr(6,4);
+            return (year.length === 4 && year >= '0000' && year <= '9999'); // Denne funker i consoll
         }
         // Sjekker om måned er mellom 01 og 12
-        function måned() {
-            let month = dato
-            return (month.lenght === 2 && month >= '01' && month <= '12')
+        function måned(dato) {
+            let month = dato.substr(3,2)
+            return (month.lenght === 2 && month >= '01' && month <= '12'); // Denne funker i consoll
         }
         // Sjekker om dag er mellom 01 og 28
-        function dag() {
-            let day =
-            return()
+        function dag(dato) {
+            let day = dato.substr(1,2)
+            return (day.lenght === 2 && day >= '01' && day <= '28'); // Denne funker i consoll, men føles som den ikke gjør det
         }
         // Sjekker skyddår
         function isLeapYear(year) {
