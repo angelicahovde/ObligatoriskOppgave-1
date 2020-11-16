@@ -18,6 +18,12 @@
     
     <script>
 
+        QUnit.test("Sjekker hovedfunksjon", function (assert) {
+                let actual = isDateValid('16.11.2020');
+                let expected = true;
+                assert.equal(actual, expected);
+        });
+
         QUnit.test("Lengden på teksten er ikke 10", function (assert) {
                 let actual = isDateValid('13.11.20201');
                 let expected = false;
